@@ -37,7 +37,7 @@ async function bootstrap() {
     .setDescription(`The ${process.env.APP_NAME} API description`)
     .setVersion('1.0')
     .addServer(
-      `${process.env.URLS_PROTOCOL ?? 'http'}://${process.env.URLS_URL ?? 'localhost'}${':'}${process.env.URLS_PORT ?? '8888'}${process.env.URLS_API_ROOT ?? '/api'}`,
+      `${process.env.URLS_PROTOCOL ?? 'http'}://${process.env.URLS_URL ?? 'localhost'}${':'}${process.env.URLS_PORT ?? '8888'}`,
     )
     .addBearerAuth()
     .build();

@@ -10,6 +10,7 @@ A NestJS application that demonstrates advanced email parsing capabilities and J
 - [Running the Application](#running-the-application)
 - [API Documentation](#api-documentation)
 - [Testing](#testing)
+- [Swagger](#swagger)
 - [Technologies Used](#technologies-used)
 - [Author](#author)
 
@@ -227,6 +228,16 @@ The project includes three test email files demonstrating different JSON extract
 1. **test-with-attachment.eml**: Email with JSON file attached
 2. **test-con-link-a-un-json.eml**: Email with direct link to JSON
 3. **test-email-con-link-que-tiene-link-a-un-json2.eml**: Email with link to webpage containing JSON link
+
+## 🛠️ Swagger
+
+This project includes Swagger UI for easy exploration and testing of all endpoints.
+
+Once the application is running, open your browser and go to:
+
+```
+http://localhost:8888/swagger
+```
 
 ## 🛠️ Technologies Used
 
