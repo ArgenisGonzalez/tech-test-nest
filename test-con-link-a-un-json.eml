@@ -1,0 +1,109 @@
+Delivered-To: arggon18@gmail.com
+Received: by 2002:a05:6500:144a:b0:2de:14a6:ad45 with SMTP id g10csp352756lqu;
+        Tue, 11 Nov 2025 11:54:12 -0800 (PST)
+X-Received: by 2002:a05:6870:3c8a:b0:3d4:94ef:d05c with SMTP id 586e51a60fabf-3e83401cbc7mr162950fac.21.1762890851767;
+        Tue, 11 Nov 2025 11:54:11 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762890851; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Xhl9MQdyBNmvwtNLOTvjTL0T9UxQTIarzeB9ENSO7Fz3LXGEzddJA9ixXByHlKbbRM
+         1R1YVcEp+hqgKYl5BzzHG6Jx5v1mOO/ggA4XTCgjzNnnNO/mlNCLYhlTSgrw3q2Em8AI
+         t60K/fZBHmMK+NuNmMip2fj4aWl7A5ENT1c6YxDbC8MNquU6i04WC3cca7gvpR4jHhhU
+         Tz9tDEAa+pS07ofwoMv8FVyHjgDGKNSm9UGlfvOsKAj5fbAJpsO/myyCncSbXEh4C/EO
+         jkqe0V1w+KNF30vUjo4833toa2RgIAlBX8kpvhLyru8gRwqwBOhUDH9oBGd2Pxiny8Nj
+         YlGQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=NoxFJe0Fjp8KjcZ3D88jFXcW9bObF/OPvidSalXSdlk=;
+        fh=9JNUWlXoeh5Hk4FmuRNMnMGV47oqGv14W9Ur9Mwa4do=;
+        b=RWVidUTGYi9nSAu5LYzu6UPN8ag5F6z+NQWYmD/Afoev97e4TkGMKX/e662HzxFlbZ
+         KMkYJlCEdqucaPpEGemH5z5jCwkRA6tzI+kMEf1Ox6/OQTOoTtKL/VUcmwDChqL3GFAH
+         idSe8S5Ufm57nC+jWDZC1i1ky3IBOEthLUgDQkpHuPp0A5UHUCYJZ5VmrS47U4xkKpdd
+         Vz1nPLWvatoTurWkyM3u78j79bSl5BTu6GUINpszw8lA1Ug/wZuwaw4ch3KtOjdfd9Mk
+         CNYvKyNWpzYPWSYTb06untRHlJEAO4a07JvPEXVNQaJSlFBhEoq5+tQXPAN9/6Smoy+Z
+         aOYg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=S5ZgP8HQ;
+       spf=pass (google.com: domain of arggon01@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=arggon01@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <arggon01@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 586e51a60fabf-3e8320d035csor245088fac.4.2025.11.11.11.54.11
+        for <arggon18@gmail.com>
+        (Google Transport Security);
+        Tue, 11 Nov 2025 11:54:11 -0800 (PST)
+Received-SPF: pass (google.com: domain of arggon01@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=S5ZgP8HQ;
+       spf=pass (google.com: domain of arggon01@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=arggon01@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1762890851; x=1763495651; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=NoxFJe0Fjp8KjcZ3D88jFXcW9bObF/OPvidSalXSdlk=;
+        b=S5ZgP8HQ53/yKM6nYaYIzsAMy4uptvx1tMn9O2mL6Pg78pXJ/1asU+6py5G8KyZF7O
+         /KSXLmBd+VmtjXdHKOaWLg05X7Ssh6b1ASSGf0iaiPuKpFRq9RuWNk7/l4Uuo9Zjm4tK
+         nAt2Sea3LpQ0A+/QztGuzjC+zd5XkdSnl13Vybs1jCx54E32S63ZfWfeuoQMl8WIoYl8
+         ikFRTD2uCbKc/7nhucp/gnhDIiSG9nru0zVr7Y1LF+2094OlgI2xhq0Un2Ad+UihmVpT
+         xhQRO91AqS2zHjb3w68nQv+0Jtp45X4hCijBpLI1DJysQ2QrI02kefRQzcGlY1WOuLw0
+         Z/fQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762890851; x=1763495651;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=NoxFJe0Fjp8KjcZ3D88jFXcW9bObF/OPvidSalXSdlk=;
+        b=TbAz4t/X/JbR0nx231BXqNXlBhw9oEqv5N0R0nnW/gtSSIluA+Sda3pbr9nxy2O2v5
+         a2ia9Rwi+3kCgGuuaC4hHydFo8iRf4fr4i/WW6QPMvW1XjlJCAr7pH7IvHqlsGmzlQ4j
+         3+it3UX25yaodD8YhGBPfvi5111gcKjbDDbhOJBgcu1UB2ejqQsNr36ulcjvC0hDMuZI
+         80+Z5/BQwOoqhJpPmXwvipYOIHd+OVC1WzRUsWl0UpLzxdqLmarXzfdqNbc7yJ6tMGdf
+         ID2QoEqN26izHp+p6JrVobelhPiUfwY7nR9hM9gzyDjxjbAPVDPuk6COFEfbkSlKJ6N2
+         4oew==
+X-Gm-Message-State: AOJu0YzK1Wv6RxI+UX2E+Bj4gAjnapA/V8sQPCcbuXqzqiv5cQu6gTwe
+	UIGqOJkVftGHu9+RPn0zueLnwMeci9N91mnsc/ey/pEl6w4J4AfpB21CQCBhtQLhRjLn/4N7N/o
+	Dl/FY3/10t1w89d9UpI9czKROBmnHvP1uedBcSw==
+X-Gm-Gg: ASbGncsx9EAe4ViFdWu7m5oMV2FFo/4hav8rBsItCG8L/E1hCTGv2Mb19w0GpaydpjV
+	432DhsNE3PZ4XF4MM87QUcOiX+kwodPfIAywogI+82cHlIDZ1X8q9jHSHFjiV3ezI5T2KPUSQcy
+	zXdG0D6aCtJMHUQyDKSOQex5h7cnnl5Lih1RnrGQzkcUivUeeoI5KCKFbQ33zZoKjx3AXXD8+oS
+	J/CJ5niFtSRntk8ioaDw13+g3piiMkcWKH6DyO7AQTZh4wvJvAdtjzzKqvrsAadRi+zbdSy
+X-Google-Smtp-Source: AGHT+IEVlol2uvoGvAG1f7ILrxYRi1il0ggtbO6hnMGHa3TdZs+Ha/BgwNsND5RibxpKduPc6DZJxsTxSjaYYhaUtHs=
+X-Received: by 2002:a05:6870:2247:b0:3e7:deca:285f with SMTP id
+ 586e51a60fabf-3e833f5044emr148980fac.8.1762890850959; Tue, 11 Nov 2025
+ 11:54:10 -0800 (PST)
+MIME-Version: 1.0
+From: Argenis Gonzalez <arggon01@gmail.com>
+Date: Tue, 11 Nov 2025 15:54:00 -0400
+X-Gm-Features: AWmQ_blHPkNkOxJDZM__49u5yUi75sqxfigAq4Bunrj1JPwdGw-h0kxuuJycoYQ
+Message-ID: <CAKKP=HY+RSyY4h6FVs-4=Gzs-===3c7kteoJP7+Jwi2nhuwBwQ@mail.gmail.com>
+Subject: test-con-link-a-un-json
+To: "arggon18@gmail.com" <arggon18@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000f304a006435702ca"
+
+--000000000000f304a006435702ca
+Content-Type: text/plain; charset="UTF-8"
+
+Hola, Argenis, Espero que estes bien. Este es un email de prueba con un
+link que te lleva a un JSON. Muchas gracias y suerte.
+ESTE ES EL LINK
+https://raw.githubusercontent.com/aws/aws-lambda-go/main/events/testdata/ses-sns-event.json
+
+--000000000000f304a006435702ca
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail-gE gmail-iv gmail-gt" style=3D"font-si=
+ze:0.875rem;padding:20px 0px 0px"><span style=3D"font-size:small">Hola, Arg=
+enis, Espero que estes bien. Este es un email de prueba con un link que te =
+lleva a un JSON. Muchas gracias y suerte.</span></div><div class=3D"gmail-"=
+><div id=3D"gmail-:yk" class=3D"gmail-ii gmail-gt" style=3D"direction:ltr;m=
+argin:8px 0px 0px;padding:0px;font-size:0.875rem;overflow-x:hidden"><div id=
+=3D"gmail-:yj" class=3D"gmail-a3s gmail-aiL" style=3D"direction:ltr;font-va=
+riant-numeric:normal;font-variant-east-asian:normal;font-variant-alternates=
+:normal;font-size-adjust:none;font-kerning:auto;font-feature-settings:norma=
+l;font-stretch:normal;font-size:small;line-height:1.5;overflow:auto hidden"=
+><div dir=3D"ltr"><div class=3D"gmail-yj6qo"></div>ESTE ES EL LINK<br><a hr=
+ef=3D"https://raw.githubusercontent.com/aws/aws-lambda-go/main/events/testdata/ses-sns-event.json">https://raw.githubusercontent.com/aws/aws-lambda-go/main/events/testdata/ses-sns-event.json</a></div></div></div></div></div>
+
+--000000000000f304a006435702ca--

@@ -1,0 +1,189 @@
+Delivered-To: arggon18@gmail.com
+Received: by 2002:a05:6500:144a:b0:2de:14a6:ad45 with SMTP id g10csp345226lqu;
+        Tue, 11 Nov 2025 11:36:42 -0800 (PST)
+X-Received: by 2002:a05:6871:2b1c:b0:3af:6b4:1232 with SMTP id 586e51a60fabf-3e83429439fmr101087fac.35.1762889802438;
+        Tue, 11 Nov 2025 11:36:42 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762889802; cv=none;
+        d=google.com; s=arc-20240605;
+        b=DhulKPMJ9rne63C6Zlplx7bCOLp+6moHA0ikfJPCf7AQ64MmgXdwHZKQeWEP87CHo7
+         pFTQAWgnY/x1Qyzjb2yaE1OX2sM762/MynEhtHYyCyqZ1U7CGTVTQI+tmTnD98dWR6eA
+         P2EdEFa+19ZueLAgArRKVN0h+Rko6F3h7gfRONfiuzdN/CmHhgLuRvbDvZR6cY62ZG8f
+         UX/yx4b/fhFxP73ifC/wv5acgzFLdJ9rNralAhRE3cSzOj59XExLO6miuGwtaeSCVX93
+         FuCEy2ZZ+PGOz4QbfFUxOaQqI2RZm3ZqrxmVLTPo3aLYYl7ETURMZPg03/ulc4V1OFwD
+         DaqQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=4zny/JvZvOhBD27wtghph+QQy86CBFG51cWYGbYZ0+E=;
+        fh=9JNUWlXoeh5Hk4FmuRNMnMGV47oqGv14W9Ur9Mwa4do=;
+        b=hErRBL0mS6wK+ltSGppGXCU2+xIA3kKfbpP6mXzvkdTGjtKXFk3RDkqMcwaEUXXdeJ
+         wEmjPHNdKJry4epywp2EUw9Z6fQwLmJpRXOpDY24T5gq65Y0qH4Xku6CA2WdkxFA31kT
+         2AeMnQd4dgL2wiB8TenBJZqXC7fz3vKJLCoKXOujWXW42DkXuQo9wjs69ffTA1sF3BH5
+         QHhSypozdUacYYIS8KEOHtT3cEfDK9fW6bBBGAgdUKP8qHN/rQF5PjZg6+NWW7rL+iSw
+         HMwkitS+PzFw06T6lTs4TTcZYNuKiP8z6xwH2+iqw1c3WP8tJcEWJp27ql4FCQDogKZv
+         bj/A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=OPmxTJRs;
+       spf=pass (google.com: domain of arggon01@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=arggon01@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <arggon01@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 586e51a60fabf-3e7c4d066dcsor1110814fac.1.2025.11.11.11.36.42
+        for <arggon18@gmail.com>
+        (Google Transport Security);
+        Tue, 11 Nov 2025 11:36:42 -0800 (PST)
+Received-SPF: pass (google.com: domain of arggon01@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=OPmxTJRs;
+       spf=pass (google.com: domain of arggon01@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=arggon01@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1762889802; x=1763494602; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=4zny/JvZvOhBD27wtghph+QQy86CBFG51cWYGbYZ0+E=;
+        b=OPmxTJRs/hSYPTWThTcNkbhSDXp5q14hDWfFrzYmEdd0/srRgafTq5Pl6j7MPRaTDp
+         bb3ealJaFE+A3+b/lck0Sqt3fYOJv905ji7jX109b2rn0KB97NErdkc7qhad+i8st6iL
+         zBujXOQ/W63j07pN8sxYyQgja73hCPceh2pLfeuKd7YA+dIscjJtza6ArxWueseHDJSc
+         upGYAtwTnK9n3wI7gYJHsCI3QT7bbEhMd05TwrWInjgaofvCycLccw10NG+sKOIXpb9s
+         Kl8qqNKdLicaOB9kYxN3SyIdmk11rC4ydzye4B/nttCbGw0mG2ZPS9wcUyOsjezqnh+s
+         ZwWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762889802; x=1763494602;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=4zny/JvZvOhBD27wtghph+QQy86CBFG51cWYGbYZ0+E=;
+        b=S7XUD+K3fLd37dYgMhiPYe2YKVBsIhGQVk1aJ/VEI645YhE+OpofioWAZyfaGKc4hk
+         P1LL7l4FTwdQtAxB810P7DXRpTL6UUpdjsVvu8Axr9Jk4iVP4y+1jUkZh52dgkcW4mSg
+         V+okfUFQXKYdGNWu7JHZEvbZPWLJN8dIhw8pkujojY9lWRl8fckXewDGmNKxNQfJjTaY
+         3AijBjLblviuEs4QuvDvKlvTjyN/xQRVRzuXIDCzMgYnobV+dDm8g8gZVLY3LtJFc+uM
+         Y8Ar+TXhcpPV1C6vH831UteXEJGujOWuWN+YV9fDNybQJ8VeSSnR8lX4WuxmiSC1Wi7V
+         Yuew==
+X-Gm-Message-State: AOJu0YwrpATxZycbXG1Qnhj2Og8+uBdCu4ElJ5pgLWjnMHM6vfwGtwPM
+	N8HE7HzLWQQZAikQ5o1+rn46EMjwwLh3Xrj2/vobMGVr3iwlFQkYIwibyDkOKoLasXYnsS1FBtR
+	Q8Q+X7ig4CF3Skji44h9+Zz8MmqiAAJRZifoUxw==
+X-Gm-Gg: ASbGncvxQB0bPuCNBD+QizUpPUbAYuHYysB9Bu6nqgdJs6xVVIuEWtBqPLSRieG/hwx
+	aistfexbvtu24kXByJjmGkR/rR+TNqU3mf22i+JoGUBw5opUi4BtkZ+1BT4W3iNW/5vs+zzCPyX
+	FnJLuqOJCDmkTmzMZSrQzFijdgrEUZDN9W04k+aWNUcBEEyT1vKAYgfUsDnHxyX4K6P3MWsQqLJ
+	cNJPr6XEjiT1ts+Zv+z6EG/xvnEwKA1Ol0gDzuFN39tZaHwmkUFdojo1yMxX64vFHSZVy5f6r/n
+	0eqg9Ck=
+X-Google-Smtp-Source: AGHT+IGQ5d1XSMYvTOxfh9DI5XIjxkXjlTJQW4e3PgRTg8VMcKPMeyUF1EJYFiJd7e//4PqTDW4bkCRzc68ROuK8hk4=
+X-Received: by 2002:a05:6870:ebcb:b0:3e8:3382:aaed with SMTP id
+ 586e51a60fabf-3e834080c5amr84974fac.12.1762889801773; Tue, 11 Nov 2025
+ 11:36:41 -0800 (PST)
+MIME-Version: 1.0
+From: Argenis Gonzalez <arggon01@gmail.com>
+Date: Tue, 11 Nov 2025 15:36:30 -0400
+X-Gm-Features: AWmQ_bmGmK_TLEWOxV3cLSg2mHFw7EjxkXOKb77d-uU0zqWFr0cv4zIx8An_xH0
+Message-ID: <CAKKP=HZoGxpEZzUKeDOtxm69r-ari9473FwFQ=O+pKbO1YcrYg@mail.gmail.com>
+Subject: test2
+To: "arggon18@gmail.com" <arggon18@gmail.com>
+Content-Type: multipart/mixed; boundary="00000000000069cc70064356c4bc"
+
+--00000000000069cc70064356c4bc
+Content-Type: multipart/alternative; boundary="00000000000069cc6e064356c4ba"
+
+--00000000000069cc6e064356c4ba
+Content-Type: text/plain; charset="UTF-8"
+
+Hola, Argenis, Espero que estes bien. Este es un email de prueba con un
+json adjunto. Muchas gracias y suerte.
+
+--00000000000069cc6e064356c4ba
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail-gE gmail-iv gmail-gt" style=3D"font-si=
+ze:0.875rem;padding:20px 0px 0px"><span style=3D"font-size:small">Hola, Arg=
+enis, Espero que estes bien. Este es un email de prueba con un json adjunto=
+. Muchas gracias y suerte.</span></div><div class=3D"gmail-"><div id=3D"gma=
+il-:yk" class=3D"gmail-ii gmail-gt" style=3D"direction:ltr;margin:8px 0px 0=
+px;padding:0px;font-size:0.875rem;overflow-x:hidden"><div id=3D"gmail-:yj" =
+class=3D"gmail-a3s gmail-aiL" style=3D"direction:ltr;font-variant-numeric:n=
+ormal;font-variant-east-asian:normal;font-variant-alternates:normal;font-si=
+ze-adjust:none;font-kerning:auto;font-feature-settings:normal;font-stretch:=
+normal;font-size:small;line-height:1.5;overflow:auto hidden"><div dir=3D"lt=
+r"><div class=3D"gmail-yj6qo"></div><br class=3D"gmail-Apple-interchange-ne=
+wline"></div></div></div></div></div>
+
+--00000000000069cc6e064356c4ba--
+--00000000000069cc70064356c4bc
+Content-Type: application/json; name="ses-sns-event.json"
+Content-Disposition: attachment; filename="ses-sns-event.json"
+Content-Transfer-Encoding: base64
+Content-ID: <f_mhuz2ahx0>
+X-Attachment-Id: f_mhuz2ahx0
+
+ewogICJSZWNvcmRzIjogWwogICAgewogICAgICAiZXZlbnRWZXJzaW9uIjogIjEuMCIsCiAgICAg
+ICJzZXMiOiB7CiAgICAgICAgInJlY2VpcHQiOiB7CiAgICAgICAgICAidGltZXN0YW1wIjogIjIw
+MTUtMDktMTFUMjA6MzI6MzMuOTM2WiIsCiAgICAgICAgICAicHJvY2Vzc2luZ1RpbWVNaWxsaXMi
+OiAyMjIsCiAgICAgICAgICAicmVjaXBpZW50cyI6IFsKICAgICAgICAgICAgInJlY2lwaWVudEBl
+eGFtcGxlLmNvbSIKICAgICAgICAgIF0sCiAgICAgICAgICAic3BhbVZlcmRpY3QiOiB7CiAgICAg
+ICAgICAgICJzdGF0dXMiOiAiUEFTUyIKICAgICAgICAgIH0sCiAgICAgICAgICAidmlydXNWZXJk
+aWN0IjogewogICAgICAgICAgICAic3RhdHVzIjogIlBBU1MiCiAgICAgICAgICB9LAogICAgICAg
+ICAgInNwZlZlcmRpY3QiOiB7CiAgICAgICAgICAgICJzdGF0dXMiOiAiUEFTUyIKICAgICAgICAg
+IH0sCiAgICAgICAgICAiZGtpbVZlcmRpY3QiOiB7CiAgICAgICAgICAgICJzdGF0dXMiOiAiUEFT
+UyIKICAgICAgICAgIH0sCiAgICAgICAgICAiZG1hcmNWZXJkaWN0IjogewogICAgICAgICAgICAi
+c3RhdHVzIjogIlBBU1MiCiAgICAgICAgICB9LAogICAgICAgICAgImRtYXJjUG9saWN5IjogInJl
+amVjdCIsCiAgICAgICAgICAiYWN0aW9uIjogewogICAgICAgICAgICAidHlwZSI6ICJTTlMiLAog
+ICAgICAgICAgICAidG9waWNBcm4iOiAiYXJuOmF3czpzbnM6dXMtZWFzdC0xOjAxMjM0NTY3ODkx
+MjpleGFtcGxlLXRvcGljIgogICAgICAgICAgfQogICAgICAgIH0sCiAgICAgICAgIm1haWwiOiB7
+CiAgICAgICAgICAidGltZXN0YW1wIjogIjIwMTUtMDktMTFUMjA6MzI6MzMuOTM2WiIsCiAgICAg
+ICAgICAic291cmNlIjogIjYxOTY3MjMwLTdBNDUtNEE5RC1CRUM5LTg3Q0JDRjIyMTFDOUBleGFt
+cGxlLmNvbSIsCiAgICAgICAgICAibWVzc2FnZUlkIjogImQ2aWl0b2JrNzV1cjQ0cDhrZG5ucDdn
+Mm44MDAiLAogICAgICAgICAgImRlc3RpbmF0aW9uIjogWwogICAgICAgICAgICAicmVjaXBpZW50
+QGV4YW1wbGUuY29tIgogICAgICAgICAgXSwKICAgICAgICAgICJoZWFkZXJzVHJ1bmNhdGVkIjog
+ZmFsc2UsCiAgICAgICAgICAiaGVhZGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAg
+ICJuYW1lIjogIlJldHVybi1QYXRoIiwKICAgICAgICAgICAgICAidmFsdWUiOiAiPDAwMDAwMTRm
+YmUxYzA5Y2YtN2NiOWY3MDQtNzUzMS00ZTUzLTg5YTEtNWZhOTc0NGY1ZWI2LTAwMDAwMEBhbWF6
+b25zZXMuY29tPiIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgICJu
+YW1lIjogIlJlY2VpdmVkIiwKICAgICAgICAgICAgICAidmFsdWUiOiAiZnJvbSBhOS0xODMuc210
+cC1vdXQuYW1hem9uc2VzLmNvbSAoYTktMTgzLnNtdHAtb3V0LmFtYXpvbnNlcy5jb20gWzU0LjI0
+MC45LjE4M10pIGJ5IGluYm91bmQtc210cC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbSB3aXRoIFNN
+VFAgaWQgZDZpaXRvYms3NXVyNDRwOGtkbm5wN2cybjgwMCBmb3IgcmVjaXBpZW50QGV4YW1wbGUu
+Y29tOyBGcmksIDExIFNlcCAyMDE1IDIwOjMyOjMzICswMDAwIChVVEMpIgogICAgICAgICAgICB9
+LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgIm5hbWUiOiAiREtJTS1TaWduYXR1cmUiLAog
+ICAgICAgICAgICAgICJ2YWx1ZSI6ICJ2PTE7IGE9cnNhLXNoYTI1NjsgcT1kbnMvdHh0OyBjPXJl
+bGF4ZWQvc2ltcGxlOyBzPXVnN25idGY0Z2NjbWxwd2ozMjJheDNwNm93Nnlmc3VnOyBkPWFtYXpv
+bnNlcy5jb207IHQ9MTQ0MjAwMzU1MjsgaD1Gcm9tOlRvOlN1YmplY3Q6TUlNRS1WZXJzaW9uOkNv
+bnRlbnQtVHlwZTpDb250ZW50LVRyYW5zZmVyLUVuY29kaW5nOkRhdGU6TWVzc2FnZS1JRDpGZWVk
+YmFjay1JRDsgYmg9RFdyM0lPbVlXb1hDQTlBUnFHQy9VYU9EZmdoZmZpd0ZOUkliMk1ja3l0ND07
+IGI9cDR1a1VEU0ZxaHFpdWIrelBSMERXMWtwN29KWmFrcnp1cHI2TEJlNnNVdXZxcEJraWc1NlV6
+VXdjMjlyRmJKRiBobFgzT3Y3RGVZVk5vTjM4c3Rxd3NGOGl2Y2FqWHBRc1hSQzFjVzl6OHg4NzVK
+MDQxckNsQWpWN0VHYkxtdWRWcFBYIDRoSHN0MVhQeVg1d21nZEhJaG1VdWg4b1pLcFZxR2k2YkhH
+enpmN2c9IgogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgIm5hbWUi
+OiAiRnJvbSIsCiAgICAgICAgICAgICAgInZhbHVlIjogInNlbmRlckBleGFtcGxlLmNvbSIKICAg
+ICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgICJuYW1lIjogIlRvIiwKICAg
+ICAgICAgICAgICAidmFsdWUiOiAicmVjaXBpZW50QGV4YW1wbGUuY29tIgogICAgICAgICAgICB9
+LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgIm5hbWUiOiAiU3ViamVjdCIsCiAgICAgICAg
+ICAgICAgInZhbHVlIjogIkV4YW1wbGUgc3ViamVjdCIKICAgICAgICAgICAgfSwKICAgICAgICAg
+ICAgewogICAgICAgICAgICAgICJuYW1lIjogIk1JTUUtVmVyc2lvbiIsCiAgICAgICAgICAgICAg
+InZhbHVlIjogIjEuMCIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAg
+ICJuYW1lIjogIkNvbnRlbnQtVHlwZSIsCiAgICAgICAgICAgICAgInZhbHVlIjogInRleHQvcGxh
+aW47IGNoYXJzZXQ9VVRGLTgiCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAg
+ICAgICAibmFtZSI6ICJDb250ZW50LVRyYW5zZmVyLUVuY29kaW5nIiwKICAgICAgICAgICAgICAi
+dmFsdWUiOiAiN2JpdCIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAg
+ICJuYW1lIjogIkRhdGUiLAogICAgICAgICAgICAgICJ2YWx1ZSI6ICJGcmksIDExIFNlcCAyMDE1
+IDIwOjMyOjMyICswMDAwIgogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAg
+ICAgIm5hbWUiOiAiTWVzc2FnZS1JRCIsCiAgICAgICAgICAgICAgInZhbHVlIjogIjw2MTk2NzIz
+MC03QTQ1LTRBOUQtQkVDOS04N0NCQ0YyMjExQzlAZXhhbXBsZS5jb20+IgogICAgICAgICAgICB9
+LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgIm5hbWUiOiAiWC1TRVMtT3V0Z29pbmciLAog
+ICAgICAgICAgICAgICJ2YWx1ZSI6ICIyMDE1LjA5LjExLTU0LjI0MC45LjE4MyIKICAgICAgICAg
+ICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgICJuYW1lIjogIkZlZWRiYWNrLUlEIiwK
+ICAgICAgICAgICAgICAidmFsdWUiOiAiMS51cy1lYXN0LTEuS3J2MkZLcEZkV1YrS1VZdzNRZDZ3
+Y3BQSjRTdi9wT1BwRVBTSG4ydTJvND06QW1hem9uU0VTIgogICAgICAgICAgICB9CiAgICAgICAg
+ICBdLAogICAgICAgICAgImNvbW1vbkhlYWRlcnMiOiB7CiAgICAgICAgICAgICJyZXR1cm5QYXRo
+IjogIjAwMDAwMTRmYmUxYzA5Y2YtN2NiOWY3MDQtNzUzMS00ZTUzLTg5YTEtNWZhOTc0NGY1ZWI2
+LTAwMDAwMEBhbWF6b25zZXMuY29tIiwKICAgICAgICAgICAgImZyb20iOiBbCiAgICAgICAgICAg
+ICAgInNlbmRlckBleGFtcGxlLmNvbSIKICAgICAgICAgICAgXSwKICAgICAgICAgICAgImRhdGUi
+OiAiRnJpLCAxMSBTZXAgMjAxNSAyMDozMjozMiArMDAwMCIsCiAgICAgICAgICAgICJ0byI6IFsK
+ICAgICAgICAgICAgICAicmVjaXBpZW50QGV4YW1wbGUuY29tIgogICAgICAgICAgICBdLAogICAg
+ICAgICAgICAiY2MiOiBbCiAgICAgICAgICAgICAgImNjQGV4YW1wbGUuY29tIiwKICAgICAgICAg
+ICAgICAiY2MyQGV4YW1wbGUuY29tIgogICAgICAgICAgICBdLAogICAgICAgICAgICAibWVzc2Fn
+ZUlkIjogIjw2MTk2NzIzMC03QTQ1LTRBOUQtQkVDOS04N0NCQ0YyMjExQzlAZXhhbXBsZS5jb20+
+IiwKICAgICAgICAgICAgInN1YmplY3QiOiAiRXhhbXBsZSBzdWJqZWN0IgogICAgICAgICAgfQog
+ICAgICAgIH0KICAgICAgfSwKICAgICAgImV2ZW50U291cmNlIjogImF3czpzZXMiCiAgICB9CiAg
+XQp9Cg==
+--00000000000069cc70064356c4bc--
