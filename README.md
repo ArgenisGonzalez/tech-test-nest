@@ -4,15 +4,15 @@ A NestJS application that demonstrates advanced email parsing capabilities and J
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [Swagger](#swagger)
-- [Technologies Used](#technologies-used)
-- [Author](#author)
+- [Overview](#-overview)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Running the Application](#-running-the-application)
+- [API Documentation](#-api-documentation)
+- [Testing](#-testing)
+- [Swagger](#-swagger)
+- [Technologies Used](#-technologies-used)
+- [Author](#-author)
 
 ## 🎯 Overview
 
