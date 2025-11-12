@@ -18,6 +18,9 @@ export class EmailService {
         emailBuffer = Buffer.from(response.data);
       } else {
         const filePath = path.resolve(source);
+        if (!filePath.endsWith('.eml')) {
+          throw new BadRequestException('File must have .eml extension');
+        }
         emailBuffer = fs.readFileSync(filePath);
       }
 

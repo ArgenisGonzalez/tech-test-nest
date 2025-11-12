@@ -1,98 +1,263 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🚀 NestJS Tech Test - Email Parser & JSON Mapper
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+A NestJS application that demonstrates advanced email parsing capabilities and JSON transformation using DTOs and mapping libraries.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 📋 Table of Contents
 
-## Description
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [API Documentation](#api-documentation)
+- [Testing](#testing)
+- [Technologies Used](#technologies-used)
+- [Author](#author)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🎯 Overview
 
-## Project setup
+This project implements two main challenges:
 
-```bash
-$ npm install
-```
+1. **JSON Mapping Service**: Transforms AWS SES event JSON to a custom output structure
+2. **Email Parser Service**: Extracts JSON data from emails in multiple scenarios (attachments, direct links, or nested links)
 
-## Compile and run the project
+## 📦 Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+- Git
+
+## 🛠️ Installation
+
+1. Clone the repository:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone https://github.com/ArgenisGonzalez/tech-test-nest.git
+cd tech-test-nest
 ```
 
-## Run tests
+2. Install dependencies:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+3. Create a `.env` file (optional):
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# .env
+PORT=8888
+URLS_API_ROOT=/api
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## 🚀 Running the Application
 
-## Resources
+### Development mode
 
-Check out a few resources that may come in handy when working with NestJS:
+```bash
+npm run start:dev
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### Production mode
 
-## Support
+```bash
+npm run build
+npm run start:prod
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Debug mode
 
-## Stay in touch
+```bash
+npm run start:debug
+```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+The application will be available at `http://localhost:8888`
 
-## License
+## 📚 API Documentation
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+### Base URL
+
+```
+http://localhost:8888/api/v1
+```
+
+### Endpoints
+
+#### 1. JSON Mapping Endpoint
+
+**POST** `/mapping`
+
+Transforms an AWS SES event JSON to a simplified output structure.
+
+**Request Body:**
+
+```json
+{
+  "Records": [
+    {
+      "eventVersion": "1.0",
+      "ses": {
+        "receipt": {
+          "timestamp": "2015-09-11T20:32:33.936Z",
+          "processingTimeMillis": 222,
+          "recipients": ["recipient@example.com"],
+          "spamVerdict": { "status": "PASS" },
+          "virusVerdict": { "status": "PASS" },
+          "spfVerdict": { "status": "PASS" },
+          "dkimVerdict": { "status": "PASS" },
+          "dmarcVerdict": { "status": "PASS" },
+          "dmarcPolicy": "reject",
+          "action": {
+            "type": "SNS",
+            "topicArn": "arn:aws:sns:us-east-1:012345678912:example-topic"
+          }
+        },
+        "mail": {
+          "timestamp": "2015-09-11T20:32:33.936Z",
+          "source": "sender@example.com",
+          "messageId": "d6iitobk75ur44p8kdnnp7g2n800",
+          "destination": ["recipient@example.com"],
+          "headersTruncated": false,
+          "headers": [...],
+          "commonHeaders": {
+            "returnPath": "...",
+            "from": ["sender@example.com"],
+            "date": "Fri, 11 Sep 2015 20:32:32 +0000",
+            "to": ["recipient@example.com"],
+            "cc": ["cc@example.com"],
+            "messageId": "<...>",
+            "subject": "Example subject"
+          }
+        }
+      },
+      "eventSource": "aws:ses"
+    }
+  ]
+}
+```
+
+**Response:**
+
+```json
+{
+  "spam": true,
+  "virus": true,
+  "dns": true,
+  "mes": "septiembre",
+  "retrasado": false,
+  "emisor": "sender",
+  "receptor": ["recipient"]
+}
+```
+
+**Response Fields:**
+
+- `spam`: Boolean - `true` if spamVerdict.status is "PASS"
+- `virus`: Boolean - `true` if virusVerdict.status is "PASS"
+- `dns`: Boolean - `true` if all DNS checks (SPF, DKIM, DMARC) are "PASS"
+- `mes`: String - Month name in Spanish from the timestamp
+- `retrasado`: Boolean - `true` if processingTimeMillis > 1000ms
+- `emisor`: String - Sender's email username (without domain)
+- `receptor`: Array - Recipients' email usernames (without domain)
+
+#### 2. Email Parser Endpoint
+
+**GET** `/email/parse`
+
+Parses an email file and extracts JSON content from various sources.
+
+**Query Parameters:**
+
+- `source` (required): URL or file path to the email file
+
+**Examples:**
+
+1. Parse email from local file:
+
+```bash
+GET /api/v1/email/parse?source=path-to-file.eml
+```
+
+At the root of this project are three test files; feel free to use them.
+
+2. Parse email from URL:
+
+```bash
+GET /api/v1/email/parse?source=https://example.com/email.eml
+```
+
+Example url created for test
+
+```bash
+GET /api/v1/email/parse?source=https://gist.github.com/ArgenisGonzalez/a668b2116142b32aaa7243dbbb6c6885/raw/d9303da4cfdf34526bf6c511509076546084fe16/test-con-link-a-un-json.eml
+```
+
+**Supported JSON extraction methods:**
+
+1. **Direct attachment**: JSON file attached to the email
+2. **Direct link**: Link to `.json` file in email body
+3. **Nested link**: Link to a webpage containing a link to the JSON file
+
+**Response:**
+Returns the extracted JSON content from the email.
+
+**Error Response:**
+
+```json
+{
+  "statusCode": 400,
+  "message": "Error parsing email: No JSON found in attachments or links",
+  "error": "Bad Request"
+}
+```
+
+## 🧪 Testing
+
+- For this repository, only unit tests for the mapping and email service were added.
+
+### Run unit tests
+
+```bash
+npm run test
+```
+
+### Test Files Included
+
+The project includes three test email files demonstrating different JSON extraction scenarios. This can be use for manually testing:
+
+1. **test-with-attachment.eml**: Email with JSON file attached
+2. **test-con-link-a-un-json.eml**: Email with direct link to JSON
+3. **test-email-con-link-que-tiene-link-a-un-json2.eml**: Email with link to webpage containing JSON link
+
+## 🛠️ Technologies Used
+
+- **NestJS** - Progressive Node.js framework
+- **TypeScript** - Type-safe JavaScript
+- **class-transformer** - Object transformation library
+- **class-validator** - Validation using decorators
+- **mailparser** - Email parsing library
+- **axios** - HTTP client
+- **cheerio** - Server-side DOM manipulation
+- **Jest** - Testing framework
+
+## 🔧 Configuration
+
+### Environment Variables
+
+| Variable        | Default | Description      |
+| --------------- | ------- | ---------------- |
+| `PORT`          | `8888`  | Application port |
+| `URLS_API_ROOT` | `/api`  | API route prefix |
+
+### Global Settings
+
+- **Validation**: Global validation pipe with whitelist and transform enabled
+- **CORS**: Enabled for all origins
+- **API Versioning**: Default version 1
+
+## 👤 Author
+
+**Argenis González**
+
+## 📄 License
+
+This project is part of a technical test for Designli.
