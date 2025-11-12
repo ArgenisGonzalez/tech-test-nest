@@ -1,11 +1,16 @@
-import { ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import helmet from 'helmet';
+import * as morgan from 'morgan';
 import 'reflect-metadata';
 import { AppModule } from './app.module';
 
+const nestLogger = new Logger('HTTP');
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  app.use(helmet());
 
   //API ROUTES PREFIX
   app.setGlobalPrefix(process.env.URLS_API_ROOT ?? '/api');
@@ -23,6 +28,18 @@ async function bootstrap() {
     preflightContinue: false,
     optionsSuccessStatus: 204,
   });
+
+  //MORGAN REQUEST LOGS
+  app.use(
+    morgan.default(
+      ':method :url :status :res[content-length] - :response-time ms',
+      {
+        stream: {
+          write: (message) => nestLogger.log(message.trim()),
+        },
+      },
+    ),
+  );
 
   //VALIDATION
   app.useGlobalPipes(
