@@ -1,7 +1,9 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Exclude, Expose, Transform } from 'class-transformer';
 
 @Exclude()
 export class OutputDto {
+  @ApiProperty()
   @Expose()
   @Transform(({ obj }) => {
     const spamStatus = obj?.Records?.[0]?.ses?.receipt?.spamVerdict?.status;
@@ -9,6 +11,7 @@ export class OutputDto {
   })
   spam: boolean;
 
+  @ApiProperty()
   @Expose()
   @Transform(({ obj }) => {
     const virusStatus = obj?.Records?.[0]?.ses?.receipt?.virusVerdict?.status;
@@ -16,6 +19,7 @@ export class OutputDto {
   })
   virus: boolean;
 
+  @ApiProperty()
   @Expose()
   @Transform(({ obj }) => {
     const receipt = obj?.Records?.[0]?.ses?.receipt;
@@ -26,6 +30,7 @@ export class OutputDto {
   })
   dns: boolean;
 
+  @ApiProperty()
   @Expose()
   @Transform(({ obj }) => {
     const timestamp = obj?.Records?.[0]?.ses?.mail?.timestamp;
@@ -50,6 +55,7 @@ export class OutputDto {
   })
   mes: string;
 
+  @ApiProperty()
   @Expose()
   @Transform(({ obj }) => {
     const processingTime =
@@ -58,6 +64,7 @@ export class OutputDto {
   })
   retrasado: boolean;
 
+  @ApiProperty()
   @Expose()
   @Transform(({ obj }) => {
     const source = obj?.Records?.[0]?.ses?.mail?.source;
@@ -66,6 +73,7 @@ export class OutputDto {
   })
   emisor: string;
 
+  @ApiProperty()
   @Expose()
   @Transform(({ obj }) => {
     const destinations = obj?.Records?.[0]?.ses?.mail?.destination;

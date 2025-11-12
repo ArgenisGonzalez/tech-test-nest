@@ -243,10 +243,13 @@ The project includes three test email files demonstrating different JSON extract
 
 ### Environment Variables
 
-| Variable        | Default | Description      |
-| --------------- | ------- | ---------------- |
-| `PORT`          | `8888`  | Application port |
-| `URLS_API_ROOT` | `/api`  | API route prefix |
+| Variable        | Default      | Description      |
+| --------------- | ------------ | ---------------- |
+| `PORT`          | `8888`       | Application port |
+| `URLS_API_ROOT` | `/api`       | API route prefix |
+| `APP_NAME`      | `/APP`       | APP Name         |
+| `URLS_PROTOCOL` | `http`       | APP Protocol     |
+| `URLS_URL`      | `/localhost` | APP current url  |
 
 ### Global Settings
 
