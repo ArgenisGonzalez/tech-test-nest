@@ -25,7 +25,7 @@ export class EmailService {
       }
 
       const parsed = await simpleParser(emailBuffer);
-      const attachment = parsed?.textAsHtml.attachments?.find((att) =>
+      const attachment = parsed?.attachments?.find((att) =>
         att.filename?.endsWith('.json'),
       );
 
